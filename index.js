@@ -1,5 +1,20 @@
-const title = document.getElementById("title");
+const title =  document.querySelector("#title");
 
-console.log(title);
+const CLICKED_CLASS = "clicked";
 
-// DOM 
+function handleClick(){
+    const currentClass = title.className;
+    console.log(currentClass);
+    if(currentClass !== CLICKED_CLASS){
+        title.className=CLICKED_CLASS;
+    } else{
+        title.className ="";
+    }
+
+}
+
+function init(){
+    title.addEventListener("click", handleClick);
+}
+
+init();
